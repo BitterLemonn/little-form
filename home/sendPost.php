@@ -14,7 +14,7 @@ if ($result_conn["code"] == 200) {
     }
 
     //判断长文本
-    if (strlen($_POST['title']) > 30 || strlen($_POST['contain']) > 200) {
+    if (mb_strlen($_POST['title'], "UTF-8") > 30 || mb_strlen($_POST['contain'], "UTF-8") > 200) {
         $json_return["code"] = 406;
         $json_return["message"] = "标题或内容超出长度限制";
         echo (json_encode($json_return, JSON_UNESCAPED_UNICODE));
