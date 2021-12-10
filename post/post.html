@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/5.1.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://cdn.staticfile.org/popper.js/2.9.3/umd/popper.min.js"></script>
+    <script src="https://cdn.staticfile.org/twitter-bootstrap/5.1.1/js/bootstrap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+    <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.8.0.js"></script>
+    <script src="js/script.js"></script>
+    <script type="text/javascript"> var items = requestData();</script>
+    <title>reply</title>
+</head>
+
+<body>
+    <div class="limit">
+        <div class="header">
+            <div class="container d-flex"
+                style="padding: 0px; margin-bottom: 10px; border: rgb(211, 211, 211) 1px solid;">
+                <!-- 导航栏 -->
+                <ul class="nav nav-pills navbar bg-light" role="tablist" id="nav_container"
+                    style="padding: 10px; width: 100%; justify-content: left;">
+                    <li class="nav-item">
+                        <a href="../home/home.html" class="nav-link active">看帖</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">精品</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">图片</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">视频</a>
+                    </li>
+                </ul>
+                <!-- 个人信息 -->
+                <ul class="nav bg-light" id="my">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="my_dropdown" data-bs-toggle="dropdown"
+                            style="margin: 10px;"></a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#form" id="send">回帖</a></li>
+                            <li><a class="dropdown-item" href="#" id="about">我的</a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                                </hr>
+                            </li>
+                            <li><a class="dropdown-item bg-danger" href="#" id="logout" onclick="logout();"
+                                    style="color: aliceblue;">登出</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="main_container">
+            <!--文章工具栏-->
+            <div class="post_title" style="overflow: hidden; padding-bottom: 10px;">
+                <div class="title_container" style="display: inline-block; margin-left: 20px;">
+                    <span style="font-size: 23px;" id="post_title">这是标题</span>
+                </div>
+                <div class="page_tool float-end" style="display: inline-block; padding: 10px;">
+                    <a style="border-radius: 10px; background: #EEE;
+                    border: #DDD 1px solid; padding: 5px 10px; margin-right: 10px; color: #444;
+                    text-decoration: none;" href="#form">回复</a>
+                    <a style="border-radius: 10px; background: #ff5454;
+                    border: #DDD 1px solid; padding: 4px 9px; color: aliceblue;
+                    text-decoration: none; cursor: pointer;" id="post_del">删除</a>
+                </div>
+            </div>
+            <div class="list-group" id="list-group" style="background: #F7F7F7;">
+            </div>
+            <div id="list_line" style="height: 1; width: 100%; border-top: #DADADA solid 1px;"></div>
+        </div>
+
+        <!-- 分页框 -->
+        <div class="page_switcher">
+            <ul class="pagination justify-content-center" style="margin:20px 0" id="page_container"></ul>
+        </div>
+
+        <!-- 回复 -->
+        <div class="reply_form">
+            <div class="reply_img">
+                <img src="../images/post.png" style="width: 30px; height: fit-content;">
+                <span style="color: #6040ff; margin-left: 10px;">一鸣惊人</span>
+            </div>
+            <div class="send_reply card">
+                <form class="card-body" method="post" id="form" onsubmit="return sendReply();">
+                    <div id="reply_contain">
+                        <textarea name="contain" id="contain" placeholder="发表你的见解" maxlength="200" required></textarea>
+                        <input name="submit" type="submit" id="submit" value="回复">
+                    </div>
+                </form>
+            </div>
+            <!-- 模态框 -->
+            <div class="modal fade" id="modal" style="display: none;" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h6 class="modal-title">提示</h6>
+                            <button type="button" class="btn-close modal-close" data-bs-dismiss="modal"></button>
+                        </div>
+                        <div class="modal-body">
+                            <span id="err">请填写标题和内容</span>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-danger modal-close" data-bs-dismiss="modal">关闭</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

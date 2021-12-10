@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+    <link href="css/style.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+    <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.8.0.js"></script>
+    <script type="text/javascript" src="js/script.js"></script>
+</head>
+
+<body>
+    <div class="whole_page">
+        <div class="register" id="welcome">
+            <h1>憧憬</h1>
+            <h4>是距离了解最遥远的一种感情</h4>
+        </div>
+        <div class="register">
+            <form id="form" onsubmit="return check();" action="register.php" method="post">
+                <div>
+                    <h1>欢迎注册</h1>
+                    <div>
+                        <p style="color: #A7A7A7">已有账号？
+                            <a href="../login/" style="text-decoration: none">登录</a>
+                        </p>
+                    </div>
+                </div>
+                <div class="form_body">
+                    <p id="userPane">
+                        <span style="color:#7B7B7B;">用&nbsp;户&nbsp;名&nbsp;&nbsp;</span>
+                        <span style="display: none;">{{username_input}}</span>
+                        <span><input name="username" id="username" type="text" placeholder="请输入用户名"
+                                v-model="username_input"></span>
+                        <span id="username_hint" class="hint"></span>
+                    </p>
+                    <p id="passwordPane">
+                        <span style="color:#7B7B7B;">密&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;码&nbsp;&nbsp;</span>
+                        <span style="display: none;">{{password_input}}</span>
+                        <span><input name="password" id="password" type="password" placeholder="请输入密码"
+                            v-model="password_input"></span>
+                        <span id="password_hint" class="hint"></span>
+                    </p>
+                    <p id="confirmPane">
+                        <span style="color:#7B7B7B;">确认密码</span>
+                        <span style="display: none;">{{confirm_input}}</span>
+                        <span><input name="confirm" id="confirm" type="password" placeholder="请确认密码"
+                            v-model="confirm_input"></span>
+                        <span id="confirm_hint" class="hint"></span>
+                    </p>
+                    <p id="emailPane">
+                        <span style="color:#7B7B7B;">邮&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;箱&nbsp;&nbsp;</span>
+                        <span style="display: none;">{{email_input}}</span>
+                        <span><input name="email" id="email" type="text" placeholder="请输入邮箱地址"
+                            v-model="email_input"></span>
+                        <span id="email_hint" class="hint"></span>
+                    </p>
+                    <p>
+                        <input name="register" type="submit" value="注册" id="submit">
+                        <span id="err_hint" class="hint" style="text-align: center; margin: -10px 0;"></span>
+                    </p>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- vue -->
+    <script>
+        $("document").ready = InitCheckEl();
+    </script>
+</body>
+
+</html>

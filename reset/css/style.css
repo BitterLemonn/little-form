@@ -1,0 +1,66 @@
+/* CSS Document */
+
+.main{
+	margin: 20px auto; 
+	overflow: auto; 
+	max-width: 70%;	
+}
+.jiantou{
+	float: right;
+    width: 120px;
+    height: 2px;
+    background-color:#e5e9ef;
+ 	font-style: normal;
+    display: inline;
+    text-align: center;
+	margin: 25px 0;
+}
+.shuxian{
+	float: left;
+    width: 1px;
+    height: 25px;
+	margin: 5px 15px 0 22px;
+    vertical-align: middle;
+    background-color:#e5e9ef;
+ 	font-style: normal;
+    display: inline;
+    text-align: center;
+}
+.from{
+	width: fit-content;
+	margin-top: 35px;
+}
+#form{
+	text-align: center;
+}
+.input{
+	min-width: 350px;
+	min-height: 40px;
+	border-radius: 10px;
+	border: 2px solid #DDDDDD;
+	padding: 0 15px;
+	margin: 5px 0;
+}
+.submit{
+	min-width: 350px;
+	min-height: 40px;
+	background-color: #0D6EFD;
+	font-size: 15px;
+	border: none;
+	border-radius: 10px;
+	color: white;
+}
+.liucheng{
+	font-size: 23px;
+}
+.bottom{
+	margin: 20px auto;
+    line-height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.err_hint{
+	color: red;
+	float: right;
+}

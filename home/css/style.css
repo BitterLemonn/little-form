@@ -1,0 +1,76 @@
+html, body{
+    padding: 0;
+    margin: 0;
+}
+.limit{
+    margin: 0 auto;
+    width: 1000px;
+}
+
+.post_num{
+    min-width: 60px;
+    padding: 20px 16px;
+    background: url("../../images/postNum_dialog.png") center no-repeat;
+    background-size: 100% 70%;
+    text-align: center;
+    margin: auto 0;
+}
+.post_contain{
+    margin: 0 30px;
+    width: 100%;
+    font-size: 80%;
+}
+.post_contain .post_detail{
+    color: #9F9F9F;
+}
+.post_member{
+    width: 100px;
+    text-align: end;
+    margin-right: 20px;
+    font-size: 80%;
+    color: #ACACAC;
+}
+.block{
+    display: block;
+}
+
+.post_form{
+    margin: 20px 0;
+}
+
+.send_post{
+    text-align: center;
+}
+.send_post #post_title{
+    width: 90%;
+    text-align: center;
+    display: inline-block;
+}
+.send_post #num_counter{
+    position: absolute;
+    right: 80px;
+    line-height: 30px;
+    color: #999;
+}
+.send_post #title{
+    width: 100%;
+    margin: 0 0 20px 0;
+}
+.send_post #post_contain{
+    width: 90%;
+    text-align: end;
+    display: inline-block;
+}
+.send_post #contain{
+    resize: none;
+    width: 100%;
+    height: 200px;
+}
+.send_post #submit{
+    width: 10%;
+    display: inline-block;
+    border-radius: 10px;
+    border: #ACACAC solid 1px;
+    background-color: #6040ff;
+    color: #DFDFDF;
+}

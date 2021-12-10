@@ -1,0 +1,88 @@
+html, body{
+    padding: 0;
+    margin: 0;
+}
+.limit{
+    margin: 0 auto;
+    width: 1000px;
+}
+
+.username{
+    margin-top: 20px;
+}
+
+.comment_item{
+    border-top: #DADADA solid 1px;
+    border-left: #DADADA solid 1px;
+    border-right: #DADADA solid 1px;
+}
+.comment_contain{
+    margin: 15px;
+}
+.comment_tool{
+    background: #fff;
+    width: 85%;
+    color: #888;
+}
+.floor_num{
+    margin-left: 20px;
+}
+
+.reply_display{
+    width: 85%;
+    
+}
+.reply_item{
+    width: 95%;
+    background: #F7F7F7;
+    padding: 10px 20px;
+}
+.reply_userIcon{
+    width: 40px;
+    height: 40px;
+    margin-right: 10px;
+}
+.userInfo{
+    margin-right: 10px;
+}
+
+.floor_reply_btn{
+    font-size: 80%;
+    cursor: pointer;
+    margin-right: 20px;
+    border: #AAA solid 1px;
+    padding: 0 5px;
+    border-radius: 5px;
+}
+
+.floor_reply_btn:hover{
+    cursor: pointer;
+    border: rgb(80, 40, 255) solid 1px;
+    color:rgb(80, 40, 255);
+}
+
+.reply_form{
+    margin: 20px 0;
+}
+
+.send_reply{
+    text-align: center;
+}
+.send_reply #reply_contain{
+    width: 90%;
+    text-align: end;
+    display: inline-block;
+}
+.send_reply #contain{
+    resize: none;
+    width: 100%;
+    height: 200px;
+}
+.send_reply #submit{
+    width: 10%;
+    display: inline-block;
+    border-radius: 10px;
+    border: #ACACAC solid 1px;
+    background-color: #6040ff;
+    color: #DFDFDF;
+}
