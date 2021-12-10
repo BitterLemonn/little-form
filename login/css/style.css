@@ -41,7 +41,6 @@ input{
     font-size: small;
     margin: -10px 0 -10px 95px;
     text-align: left;
-    width: fit-content;
 }
 #submit{
     width: 79%;
