@@ -13,8 +13,7 @@ function confirm() {
 				$('#input2').attr('placeholder', '新密码');
 				$('#input1').attr('name', 'password');
 				$('#input2').attr('name', 'confirm');
-				$('#form').attr('onsubmit', 'return resetpwd('+ data.data[0].username +');');
-				alert(data.data[0].username);
+				$('#form').attr('onsubmit', 'return resetpwd("'+ data.data[0].username +'");');
 				$('#input1').attr('value', '');
 				$('#input2').attr('value', '');
 				$('.err_hint').text("");
@@ -38,7 +37,6 @@ function confirm() {
 }
 
 function resetpwd(username) {
-	alert(username);
 	$.ajax({
 		url: 'reset.php',
 		type: 'post',
