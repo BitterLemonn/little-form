@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/5.1.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://cdn.staticfile.org/popper.js/2.9.3/umd/popper.min.js"></script>
+    <script src="https://cdn.staticfile.org/twitter-bootstrap/5.1.1/js/bootstrap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+    <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.8.0.js"></script>
+    <script src="js/self.js"></script>
+    <script type="text/javascript">
+        if (getCookie("username") == "") {
+            alert("请先登录");
+            window.location.href = "../login/login.html";
+        }
+        var items = requestData();
+    </script>
+	<title>博客首页</title>
+	<link href="css/style.css" rel="stylesheet" />
+</head>
+
+<body>
+	<div id="wrap">
+		<div id="left">
+			<div id="photo" class="img">
+				<a href="about.html"><img src="../images/me.jpg" /></a>
+			</div>
+			<div id="blogtitle">
+				<h1><a href="my_post.html">Hi</a></h1>
+			</div>
+
+			<div class="clear">
+			</div>
+
+			<div id="nav">
+				<li><a href="../home/home.html">返回首页</a></li>
+				<li><a href="my_post.html">我的帖子</a></li>
+				<li><a href="about.php">修改信息</a></li>
+			</div>
+		</div>
+		<div id="right">
+			<div class="my_post">
+
+				<div class="header">
+					<h3 align="center" style="color:#7182ff">已发帖子</h3>	
+				</div>
+
+				<div class="main_container">
+					<div class="list-group" id="list-group">
+					</div>
+				</div>
+
+				<!-- 分页框 -->
+				<div class="page_switcher">
+					<ul class="pagination justify-content-center" style="margin:20px 0" id="page_container"></ul>
+				</div>
+			</div>
+
+		</div>
+	</div>
+
+</body>
+
+</html>
