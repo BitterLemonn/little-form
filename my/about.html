@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta charset="utf-8">
+    <title>修改个人信息</title>
+    <link href="css/style.css" rel="stylesheet" />
+    <script src="js/edit_user.js"></script>
+    <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/5.1.1/css/bootstrap.min.css">
+    <script src="https://cdn.staticfile.org/twitter-bootstrap/5.1.1/js/bootstrap.min.js"></script>
+    <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.8.0.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+
+
+
+    <script type="text/javascript">
+        if (getCookie("username") == "") {
+            alert("请先登录");
+            window.location.href = "../login/login.html";
+        }
+        getUser()
+
+        $(document).on("click", "img", function () {
+            ShowCreateModal("修改头像");
+        })
+
+        function ShowCreateModal(title) {
+            $("#createFileTitle").text(title);
+            $('#createFileMModal').modal('show');
+        }
+
+        function UpLoadImg() {
+            var formData = new FormData();
+            formData.append('image', $('#image')[0].files[0]);
+            $.ajax({
+                url: "upload_file.php", //处理页面的路径
+                data: formData, //通过json格式将一组数据传过去
+                type: "post", //数据的提交和传递方式，最好用POST
+                dataType: "json", //页面返回值的类型，共有三种：TEXT,JSON,XML可选
+                cache: false,
+                contentType: false,
+                processData: false,
+                success: function (res) { //回调函数：如果ajax调用成功，就执行这个success后面的函数，(data)当做参数返回过来
+                    if (res.flag === 1) {
+                        $('#createFileMModal').modal('hide');
+                        alert('上传成功！');
+                        location.reload();
+                    } else if (res.flag === 2) {
+                        alert('网络或其他未知错误，请重试！')
+                    } else {
+                        alert('图片格式错误，请重试！')
+                    }
+                },
+                error: function () {
+                    alert("error")
+                }
+            });
+
+        }
+    </script>
+</head>
+
+<body>
+
+    <div id="wrap">
+        <div id="left">
+            <div id="blogtitle">
+                <h1><a href="my_post.html">Hi</a></h1>
+            </div>
+            <div class="clear"></div>
+            <div id="nav">
+                <li><a href="../home/home.html">返回首页</a></li>
+                <li><a href="my_post.html">我的帖子</a></li>
+                <li><a href="about.html">修改信息</a></li>
+            </div>
+        </div>
+        <div id="right">
+            <div class="post"> <span class="time">修改个人信息</span>
+               <h6 align="center">点击修改头像</h6>
+                <div id="photo" class="img" style="margin:5px auto 50px;">
+                    <img src="" alt="image" id="profile" />
+                </div>
+                
+                            
+                <div class="modal fade" id="createFileMModal" role="dialog" aria-labelledby="exampleModalLabel"
+                    aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-body">
+                                <form id="form1" method="post" class="form-horizontal" role="form"
+                                    enctype="multipart/form-data">
+                                    <div class="col-sm-9 require">
+                                        <input type="file" class="form-control" name="image" id="image">
+                                        <div class="upImg" style="margin-top: 5px"  align="right">
+                                        	<a onclick="UpLoadImg()">上传</a>
+                                        </div>
+                                    </div>
+                                </form>
+
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <form method="post" action="" id="form" onsubmit="return edit();">
+                    <table id="centerTable" border="0" cellspacing="15">
+                        <tr align="center">
+                            <td >用户名</td>
+                            <td ><input name="userName" id='userName' type="text" value="" readOnly></td>
+                        </tr>
+                        <tr align="center">
+                            <td>密码</td>
+                            <td><input id="password1" name="password1" type="password"></td>
+                        </tr>
+                        <tr align="center">
+                            <td>重复密码</td>
+                            <td><input name="password" id="password" type="password">
+                                <span id="passwordHint" class="hint"></span>
+
+                            </td>
+
+                        </tr>
+                        <tr align="center">
+                            <td>邮箱 </td>
+                            <td><input name="email" type="text" id="email" value="" /></td>
+                        </tr>
+                    </table>
+                    <div align="center" id="comment" style="padding-top:15px">
+                        <input name="submit" type="submit" value="确认修改">
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

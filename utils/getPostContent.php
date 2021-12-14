@@ -43,10 +43,13 @@ if ($result_conn["code"] == 200) {
             $eTime = substr(explode(" ", $line['timestamp'])[1], 0, 5);
             $nDay = date("Y-m-d");
             $eDay == $nDay ? $time = $eTime : $time = substr($line['timestamp'], 0, count($line['timestamp']) - 4);
-
+            // 查询头像
+            $uName = $line['userName'];
+            $sql = "SELECT * from user where username='$uName'";
+            $result_profile = mysqli_fetch_array(mysqli_query($conn, $sql));
             $item = [
                 "commentID" => $line["commentID"], "username" => $line["userName"],
-                "comment" => $line["comment"], "timestamp" => $time, "type" => 0, "childComment" => []
+                "comment" => $line["comment"], "timestamp" => $time, "type" => 0, "childComment" => [],"profile" => $result_profile['profile']
             ];
             array_push($json_return["data"], $item);
         }
@@ -62,10 +65,14 @@ if ($result_conn["code"] == 200) {
             for ($i = 0; $i < count($json_return["data"]); $i++) {
                 //回复贴的主贴所在页数为当前页数才传出数据
                 if ($line["ownContent"] == $json_return["data"][$i]["commentID"]) {
+                    // 查询头像
+                    $uName = $line['userName'];
+                    $sql = "SELECT * from user where username='$uName'";
+                    $result_profile = mysqli_fetch_array(mysqli_query($conn, $sql));
                     $item = [
                         "commentID" => $line["commentID"], "username" => $line["userName"],
                         "comment" => $line["comment"], "timestamp" => $time, "type" => 1, "childComment" => [],
-                        "ownContent" => $line["ownContent"]
+                        "ownContent" => $line["ownContent"],"profile" => $result_profile["profile"]
                     ];
                     array_push($json_return["data"], $item);
 

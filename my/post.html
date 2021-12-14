@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/5.1.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/post.css">
+    <script src="https://cdn.staticfile.org/popper.js/2.9.3/umd/popper.min.js"></script>
+    <script src="https://cdn.staticfile.org/twitter-bootstrap/5.1.1/js/bootstrap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+    <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.8.0.js"></script>
+    <script src="./js/reply.js"></script>
+    <script type="text/javascript">
+        var items = requestData();
+    </script>
+    <title>reply</title>
+</head>
+
+<body>
+    <div class="limit">
+        <div class="header">
+           
+            <div class="container d-flex "
+                style="padding: 0px; margin-bottom: 10px">
+                <ul class="nav justify-content-end" id="nav_container" style="padding: 10px;">
+                    <button class="btn btn-danger" onclick="delTopic()" id="delTopic">删除帖子</button>
+                </ul>
+            </div>
+            
+        </div>
+
+        <div class="main_container">
+            <div class="list-group" id="list-group" style="background: #F7F7F7;">
+            </div>
+            <div id="list_line" style="height: 1; width: 100%; border-top: #DADADA solid 1px;"></div>
+        </div>
+
+        <!-- 分页框 -->
+        <div class="page_switcher">
+            <ul class="pagination justify-content-center" style="margin:20px 0" id="page_container"></ul>
+        </div>
+
+    </div>
+</body>
+
+</html>
+
+<script type="text/javascript">
+    document.getElementById("delTopic").onclick = function () {
+        var msg = "您真的确定要删除吗？\n\n请确认！";
+        if (confirm(msg) == true) {
+            delTopic()
+        } else {
+            return false;
+        }
+    }
+</script>
