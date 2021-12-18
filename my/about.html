@@ -7,6 +7,7 @@
     <title>修改个人信息</title>
     <link href="css/style.css" rel="stylesheet" />
     <script src="js/edit_user.js"></script>
+<<<<<<< HEAD
     <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/5.1.1/css/bootstrap.min.css">
     <script src="https://cdn.staticfile.org/twitter-bootstrap/5.1.1/js/bootstrap.min.js"></script>
     <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.8.0.js"></script>
@@ -16,11 +17,18 @@
 
 
     <script type="text/javascript">
+=======
+    <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.8.0.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    
+        <script type="text/javascript">
+>>>>>>> b0625fea7dd2921ce92114fcd24b8f370d31fb3c
         if (getCookie("username") == "") {
             alert("请先登录");
             window.location.href = "../login/login.html";
         }
         getUser()
+<<<<<<< HEAD
 
         $(document).on("click", "img", function () {
             ShowCreateModal("修改头像");
@@ -59,13 +67,22 @@
             });
 
         }
+=======
+>>>>>>> b0625fea7dd2921ce92114fcd24b8f370d31fb3c
     </script>
 </head>
 
 <body>
+<<<<<<< HEAD
 
     <div id="wrap">
         <div id="left">
+=======
+    
+    <div id="wrap">
+        <div id="left">
+            <div id="photo" class="img"> <a href="#"><img src="../images/me.jpg" alt="image" /></a> </div>
+>>>>>>> b0625fea7dd2921ce92114fcd24b8f370d31fb3c
             <div id="blogtitle">
                 <h1><a href="my_post.html">Hi</a></h1>
             </div>
@@ -78,6 +95,7 @@
         </div>
         <div id="right">
             <div class="post"> <span class="time">修改个人信息</span>
+<<<<<<< HEAD
                <h6 align="center">点击修改头像</h6>
                 <div id="photo" class="img" style="margin:5px auto 50px;">
                     <img src="" alt="image" id="profile" />
@@ -110,6 +128,16 @@
                         <tr align="center">
                             <td >用户名</td>
                             <td ><input name="userName" id='userName' type="text" value="" readOnly></td>
+=======
+                <form method="post" action="" id="form" onsubmit="return edit();">
+                    <table id="centerTable" border="0" cellspacing="15">
+                        <tr style='display: none'>
+                            <td><input type='text' name='id'></td>
+                        </tr>
+                        <tr align="center">
+                            <td>用户名</td>
+                            <td><input name="userName" id='userName' type="text" value="" readOnly></td>
+>>>>>>> b0625fea7dd2921ce92114fcd24b8f370d31fb3c
                         </tr>
                         <tr align="center">
                             <td>密码</td>
@@ -118,18 +146,30 @@
                         <tr align="center">
                             <td>重复密码</td>
                             <td><input name="password" id="password" type="password">
+<<<<<<< HEAD
                                 <span id="passwordHint" class="hint"></span>
+=======
+                            <span id="passwordHint" class="hint"></span>
+>>>>>>> b0625fea7dd2921ce92114fcd24b8f370d31fb3c
 
                             </td>
 
                         </tr>
                         <tr align="center">
+<<<<<<< HEAD
                             <td>邮箱 </td>
+=======
+                            <td>邮箱</td>
+>>>>>>> b0625fea7dd2921ce92114fcd24b8f370d31fb3c
                             <td><input name="email" type="text" id="email" value="" /></td>
                         </tr>
                     </table>
                     <div align="center" id="comment" style="padding-top:15px">
+<<<<<<< HEAD
                         <input name="submit" type="submit" value="确认修改">
+=======
+                        <input name="submit" type="submit" value="确认修改" id="submit">
+>>>>>>> b0625fea7dd2921ce92114fcd24b8f370d31fb3c
                     </div>
                 </form>
             </div>

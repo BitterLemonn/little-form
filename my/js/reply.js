@@ -78,9 +78,13 @@ function initItem(items) {
         //主贴
         if (item["type"] == 0) {
             //叶节点
+<<<<<<< HEAD
             var u_img = item['profile'] ? "../../little-form-master/my/" + item['profile']:"../images/img2.jpg"
             console.error(u_img);
             var img = $('<img class="rounded-circle userImg" src="'+u_img+'" alt="userIcon" style="width: 70px; height: 70px;">');
+=======
+            var img = $('<img class="rounded-circle userImg" src="../images/img2.jpg" alt="userIcon" style="width: 70px; height: 70px;">');
+>>>>>>> b0625fea7dd2921ce92114fcd24b8f370d31fb3c
             var username = $('<span class="username" style="display: block;"></span>');
             var comment = $('<div class="comment_contain"></div>');
             var comment_time = $('<span class="comment_time"></span>');
@@ -131,8 +135,12 @@ function initItem(items) {
                         if (items[k]["commentID"] == num_floor) {
 
                             //叶节点
+<<<<<<< HEAD
                             var u_img = item['profile'] ? "../../little-form-master/my/" + item['profile']:"../images/img2.jpg"
                             var img = $('<img src="'+u_img+'" alt="userIcon" class="reply_userIcon img-thumbnail">');
+=======
+                            var img = $('<img src="../images/img2.jpg" alt="userIcon" class="reply_userIcon img-thumbnail">');
+>>>>>>> b0625fea7dd2921ce92114fcd24b8f370d31fb3c
                             var username = $('<span></span>');
                             username.text(items[k]["username"] + ": ");
                             var comment = $("<span></span>");
@@ -266,8 +274,12 @@ function showMore(commentID, startNum) {
                 for (var k in items) {
                     if (items[k]["commentID"] == num_floor) {
                         //叶节点
+<<<<<<< HEAD
                         var u_img = item['profile'] ? "../../little-form-master/my/" + item['profile']:"../images/img2.jpg"
                         var img = $('<img src="'+u_img+'" alt="userIcon" class="reply_userIcon img-thumbnail">');
+=======
+                        var img = $('<img src="../images/img2.jpg" alt="userIcon" class="reply_userIcon img-thumbnail">');
+>>>>>>> b0625fea7dd2921ce92114fcd24b8f370d31fb3c
                         var username = $('<span></span>');
                         username.text(items[k]["username"] + ": ");
                         var comment = $("<span></span>");

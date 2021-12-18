@@ -27,8 +27,13 @@ a img{border:none;}
 
 #left{width:300px; float:left;}
 
+<<<<<<< HEAD
 #photo{width:80px; height:80px; border-radius:50px; overflow:hidden;}
 #photo img{width:80px; height:70px;margin:0 auto 50px;}
+=======
+#photo{width:70px; height:70px; border-radius:35px; overflow:hidden; }
+#photo img{width:70px; height:70px;}
+>>>>>>> b0625fea7dd2921ce92114fcd24b8f370d31fb3c
 
 #blogtitle{width:70px; height:130px; margin-top:20px;}
 #blogtitle h1{font-size:70px; text-align:center; line-height:90px;}
@@ -46,12 +51,19 @@ a img{border:none;}
 
 #centerTable{margin: 0px auto}
 #centerTable input{
+<<<<<<< HEAD
 				margin-left: 10px;
                 border: 0.5px solid #ccc; 
                 padding: 7px 0px;
                 border-radius: 3px; /*css3属性IE不支持*/
                 padding-left:5px; 
 				margin-bottom: 20px;
+=======
+                border: 1px solid #ccc; 
+                padding: 7px 0px;
+                border-radius: 3px; /*css3属性IE不支持*/
+                padding-left:5px; 
+>>>>>>> b0625fea7dd2921ce92114fcd24b8f370d31fb3c
             }
 
 
@@ -117,11 +129,19 @@ a img{border:none;}
     height: 200px;
 }
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> b0625fea7dd2921ce92114fcd24b8f370d31fb3c
 .hint{
     display: block;
     color: crimson;
     font-size: small;
+<<<<<<< HEAD
     margin: -25px 0 -5px 5px;
     text-align: right;
+=======
+    margin: -10px 0 -10px 95px;
+    text-align: left;
+>>>>>>> b0625fea7dd2921ce92114fcd24b8f370d31fb3c
 }
