@@ -42,22 +42,15 @@ if ($result_conn["code"] == 200) {
         $eTime = substr(explode(" ", $line['timestamp'])[1], 0, 5);
         $nDay = date("Y-m-d");
         $eDay == $nDay ? $time = $eTime : $time = $eDay;
-<<<<<<< HEAD
-         // 查询头像
-         $uName = $line['userName'];
-         $sql = "SELECT * from user where username='$uName'";
-         $result_profile = mysqli_fetch_array(mysqli_query($conn, $sql));
+        // 查询头像
+        $uName = $line['userName'];
+        $sql = "SELECT * from user where username='$uName'";
+        $result_profile = mysqli_fetch_array(mysqli_query($conn, $sql));
 
         $item = [
             "postID" => $line['postID'], "title" => $line['title'], "content" => $line['content'],
             "timestamp" => $time, "ownUser" => $line['ownUser'], "recentUser" => $line['recentUser'],
-            "postCount" => $line['postCount'],"profile" => $result_profile['profile']
-=======
-        $item = [
-            "postID" => $line['postID'], "title" => $line['title'], "content" => $line['content'],
-            "timestamp" => $time, "ownUser" => $line['ownUser'], "recentUser" => $line['recentUser'],
-            "postCount" => $line['postCount']
->>>>>>> b0625fea7dd2921ce92114fcd24b8f370d31fb3c
+            "postCount" => $line['postCount'], "profile" => $result_profile['profile']
         ];
         array_push($json_return["data"], $item);
     }

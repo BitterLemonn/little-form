@@ -12,11 +12,9 @@ if ($_SERVER['REQUEST_METHOD']=='GET'){
 	echo (json_encode($json_return, JSON_UNESCAPED_UNICODE));
 
 }elseif($_SERVER['REQUEST_METHOD']=='POST'){  // 改
-<<<<<<< HEAD
+
 	$sql  = "UPDATE user SET password='{$_POST['password']}' ,email='{$_POST['email']}' ,profile='/upload/A_8nl92t.jpeg' where username='{$_POST['userName']}'";
-=======
-	$sql  = "UPDATE user SET password='{$_POST['password']}' ,email='{$_POST['email']}' where username='{$_POST['userName']}'";
->>>>>>> b0625fea7dd2921ce92114fcd24b8f370d31fb3c
+
 	$result = mysqli_query($conn, $sql);
 	if (!$result){
 		$json_return["code"] = 202;
