@@ -52,7 +52,7 @@
             <li class="nav-item sidebar-item">
                 <a class="nav-link option active" href="#$p=state" id="state-btn"
                     onclick="showCard('state-content-card');">
-                    <svg t="1639905168623" class="icon" viewBox="0 0 1029 1024" version="1.1"
+                    <svg t="1639905168623" class="icon sidebar-icon" viewBox="0 0 1029 1024" version="1.1"
                         xmlns="http://www.w3.org/2000/svg" p-id="2085" width="20" height="20">
                         <path
                             d="M728.064 420.864c-165.888 0-301.056 134.144-301.056 301.056s134.144 301.056 301.056 301.056 301.056-134.144 301.056-301.056-135.168-301.056-301.056-301.056zM701.44 890.88c-10.24 10.24-27.648 10.24-38.912 0l-21.504-21.504-128-128c-10.24-10.24-10.24-27.648 0-38.912l21.504-21.504c10.24-10.24 27.648-10.24 38.912 0l108.544 108.544 204.8-204.8c10.24-10.24 27.648-10.24 38.912 0l21.504 21.504c10.24 10.24 10.24 27.648 0 38.912l-245.76 245.76z"
@@ -61,9 +61,20 @@
                             d="M328.704 720.896c0-220.16 179.2-399.36 399.36-399.36h17.408c1.024-10.24 2.048-20.48 2.048-29.696C747.52 132.096 617.472 2.048 457.728 2.048S167.936 132.096 167.936 291.84c0 114.688 66.56 214.016 163.84 261.12C143.36 589.824 0 756.736 0 955.392v64.512H462.848C380.928 947.2 328.704 839.68 328.704 720.896z"
                             p-id="2087" fill="#EEE"></path>
                     </svg>
-                    <span class="samll icon-text" id="state-text" style="color: #EEE">状态管理</span>
+                    <span class="small icon-text" id="comment-text" style="color: #EEE">状态管理</span>
                 </a>
             </li>
+            <li class="nav-item sidebar-item">
+                <a class="nav-link option active" href="#$p=comment" id="comment-btn"
+                    onclick="showCard('comment-content-card');">
+                    <svg t="1639918799355" class="icon sidebar-icon" viewBox="0 0 1171 1024" version="1.1"
+                        xmlns="http://www.w3.org/2000/svg" p-id="3146" width="30" height="30">
+                        <path
+                            d="M821.510124 787.499968H660.432094c-5.365949 0-8.93956 1.792337-12.524235 5.377012l-89.49517 89.484107c-41.157378 41.168442-109.166627 41.168442-152.127407 0l-89.49517-89.484107a16.208484 16.208484 0 0 0-12.535299-5.377012H143.187847C64.435638 787.499968 0 723.075394 0 644.323184v-501.190656C0 64.435638 64.435638 0 143.187847 0h680.114614c78.75221 0 143.187847 64.435638 143.187847 143.176783v501.190657c-1.792337 78.75221-66.227975 143.176783-144.935929 143.176783z m0-71.58286a71.804136 71.804136 0 0 0 71.593923-71.593924v-501.190656a71.793072 71.793072 0 0 0-71.593923-71.58286H141.39551a71.782008 71.782008 0 0 0-71.58286 71.58286v501.190656a71.793072 71.793072 0 0 0 71.58286 71.616051h161.07803c23.234004 0 46.545455 8.93956 62.6433 26.840807l89.49517 89.49517c14.316572 14.316572 35.79143 14.316572 50.108002 0l89.49517-89.49517c16.108909-16.131037 39.376105-26.840806 62.643301-26.840807zM266.637855 340.057307c30.425481 0 53.692677 23.234004 53.692676 53.703741v35.791429c0 30.425481-23.234004 53.692677-53.692676 53.692677s-53.692677-23.234004-53.692677-53.692677V393.761048c0-30.436545 23.234004-53.703741 53.692677-53.703741z m214.770706 0c30.425481 0 53.692677 23.234004 53.692677 53.703741v35.791429c0 30.425481-23.234004 53.692677-53.692677 53.692677s-53.692677-23.234004-53.692676-53.692677V393.761048c0-30.436545 23.234004-53.703741 53.692676-53.703741z m214.781771 0c30.425481 0 53.692677 23.234004 53.692677 53.703741v35.791429c0 30.425481-23.234004 53.692677-53.692677 53.692677s-53.692677-23.234004-53.692677-53.692677V393.761048c0-30.436545 23.234004-53.703741 53.692677-53.703741z m0 0"
+                            p-id="3147" fill="#999999"></path>
+                    </svg>
+                    <span class="small icon-text" id="comment-text" style="color: #EEE">评论管理</span>
+                </a>
             </li>
             <hr>
             <!--我的github-->
@@ -132,23 +143,53 @@
                             <div class="list-group-item">
                                 <div class="row">
                                     <div class="col-2">
-                                        <span class="state-title">用户名称</span>
+                                        <span class="state-name">用户名称</span>
                                     </div>
                                     <div class="col-4">
-                                        <span class="state-content">用户token</span>
+                                        <span class="state-token">用户token</span>
                                     </div>
                                     <div class="col-2">
                                         <span class="state-time">登录时间</span>
                                     </div>
                                     <div class="col-2">
-                                        <span class="state-tag">登录状态</span>
+                                        <span class="state-state">登录状态</span>
                                     </div>
                                     <div class="col-2">
-                                        <span class="state-tool">操作</span>
+                                        <span class="state-op">操作</span>
                                     </div>
                                 </div>
                             </div>
                             <div class="list-group-item" id="state-loading" style="text-align: center;">
+                                <div class="spinner-border" style="color: #6777db"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!--评论管理卡片-->
+                <div class="comment-content-card content-card card" style="margin: 0 100px; display: none;">
+                    <div class="card-body" style="padding-bottom: 0;">
+                        <div class="list-group list-group-flush" id="comment-container">
+                            <div class="list-group-item">
+                                <div class="row">
+                                    <div class="col-2">
+                                        <span class="comment-name">用户名称</span>
+                                    </div>
+                                    <div class="col-2">
+                                        <span class="comment-title">帖子名</span>
+                                    </div>
+                                    <div class="col-4">
+                                        <span class="comment-content">评论内容</span>
+                                    </div>
+                                    <div class="col-2">
+                                        <span class="comment-time">评论时间</span>
+                                    </div>
+                                    <div class="col-2">
+                                        <span class="comment-tool">操作</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="list-group-item" id="comment-loading" style="text-align: center;">
                                 <div class="spinner-border" style="color: #6777db"></div>
                             </div>
                         </div>

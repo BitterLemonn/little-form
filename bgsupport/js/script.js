@@ -60,7 +60,7 @@ function showCard(cardName) {
     var title;
     switch (cardName) {
         case 'state-content-card': title = "状态管理"; break;
-        // case 'catalogue-content-card': title = "分类管理"; break;
+        case 'comment-content-card': title = "评论管理"; break;
         // case 'tag-content-card': title = "标签管理"; break;
         // case 'page-content-card': title = "页面管理"; break;
         // case 'comment-content-card': title = "评论管理"; break;

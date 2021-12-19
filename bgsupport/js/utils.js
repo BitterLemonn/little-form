@@ -38,9 +38,13 @@ function closeTipModal() {
 //询问操作
 function askOp(param, mode, isDanger, btnText) {
     var message;
-    switch(mode){
+    switch (mode) {
         case "state": {
             message = "是否强制该用户登出";
+            break;
+        }
+        case "delComment": {
+            message = "是否删除该评论";
             break;
         }
     }
@@ -66,6 +70,7 @@ function askOp(param, mode, isDanger, btnText) {
         $(".modal-title").css("color", "#000");
         switch (mode) {
             case "state": forceLogoutUser(param); break;
+            case "delComment": delComment(param); break;
             // case "tag": delTag(param); break;
             // case "cata": delCata(param); break;
             // case "post": delPost(param); break;
