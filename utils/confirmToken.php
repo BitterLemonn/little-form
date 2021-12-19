@@ -1,6 +1,6 @@
 <?php
 header('Content-Type:application/json');
-$result_conn = json_decode(require_once("../utils/conn.php"), JSON_UNESCAPED_UNICODE);
+$result_conn = json_decode(require_once("conn.php"), JSON_UNESCAPED_UNICODE);
 
 if ($result_conn["code"] == 200) {
     $json_return = ["code" => 200, "message" => "success", "data" => []];

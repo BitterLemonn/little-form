@@ -1,0 +1,81 @@
+body,
+        html {
+            padding: 0;
+            margin: 0;
+        }
+
+        body {
+            background-color: #EEE;
+        }
+
+        .header-bg {
+            background-color: #6777db;
+            position: absolute;
+            top: 0;
+            width: 100%;
+            min-width: 1230px;
+            height: 100px;
+            z-index: -1;
+        }
+
+        .navbar-brand {
+            margin-right: 0px;
+            text-align: center;
+        }
+
+        #brand-text:hover {
+            color: #6777db;
+        }
+
+        .nav-link {
+            padding: 0.5rem 0.5rem;
+            text-align: center;
+        }
+
+        .nav-link.active {
+            background-color: #6777db !important;
+            box-shadow: #999 0px 0px 20px;
+        }
+
+        .sidebar-item {
+            margin-bottom: 20px;
+        }
+
+        .side-bar {
+            width: 65px;
+            top: 0;
+            position: fixed;
+            box-shadow: none;
+            height: 100%;
+            background: #FFF;
+            padding: 10px;
+        }
+
+        .icon-text {
+            display: none;
+            text-decoration: none;
+            color: #999;
+            font-size: 14px;
+            line-height: 30px;
+        }
+
+        .row {
+            text-align: center;
+        }
+
+        .col-item {
+            font-size: 80%;
+        }
+
+        ::-webkit-input-placeholder{
+            font-size: 80%;
+        }
+
+        .post-edit-input{
+            border: #999 1px solid;
+            border-radius: 10px;
+            padding: 5px 10px;
+        }
+        .post-edit-input:focus{
+            outline: #6777db 1px solid;
+        }
