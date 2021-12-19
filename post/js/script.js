@@ -89,7 +89,7 @@ function initItem(items, title) {
         var item = items[i];
         //主贴
         if (item["type"] == 0) {
-			var u_img = item['profile'] ? "../../little-form-master/my/" + item['profile']:"../images/img2.jpg"
+			var u_img = item['profile'] ? "../" + item['profile'] : "../images/img2.jpg"
             //叶节点
             var img = $('<img class="rounded-circle userImg" src="'+u_img+'" alt="userIcon" style="width: 70px; height: 70px;">');
             var username = $('<span class="username" style="display: block;"></span>');
@@ -147,7 +147,7 @@ function initItem(items, title) {
                     for (var k in items) {
                         if (items[k]["commentID"] == num_floor) {
                             //叶节点
-                            var u_img = item['profile'] ? "../../little-form-master/my/" + item['profile']:"../images/img2.jpg"
+                            var u_img = items[k]['profile'] ? "../" + items[k]['profile'] : "../images/img2.jpg";
                             var img = $('<img src="'+u_img+'" alt="userIcon" class="reply_userIcon img-thumbnail">');
                             var username = $('<span></span>');
                             username.text(items[k]["username"] + ": ");
