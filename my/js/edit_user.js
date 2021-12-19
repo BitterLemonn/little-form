@@ -39,13 +39,16 @@ function checkPassword() {
     var rule = /^.+$/
     if (password == "" || password1 == "") {
         $("#passwordHint").text('密码不能为空');
+        $("#passwordHint").css("margin-bottom", "3px");
         return false;
     } else if (password !== password1) {
         //输入校验结果
         $("#passwordHint").text('两次密码不一致');
+        $("#passwordHint").css("margin-bottom", "3px");
         return false;
     } else if (rule.test(password)) {
         $("#passwordHint").text('');
+        $("#passwordHint").css("margin-bottom", "25px");
         return true;
     }
     return true;
@@ -58,6 +61,7 @@ function edit() {
             url: "updaMe.php",
             type: "POST",
             data: formData,
+
             success: function (data, textStatus, jqXHR) {
                 if (data["code"] == 200) {
                     alert("用户信息修改成功");

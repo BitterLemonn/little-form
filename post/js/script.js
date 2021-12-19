@@ -207,14 +207,16 @@ function initItem(items, title) {
     var my = $("#my_dropdown");
     my.text(getCookie("username"));
     my.mouseenter(function () {
-        my.css("display", "none");
-        my.fadeIn("slow");
+        my.stop(true, true);
+        my.css("opacity", "0");
         my.text("你好, " + getCookie("username"));
+        my.animate({opacity: 1}, 500);
     })
     my.mouseleave(function () {
-        my.css("display", "none");
-        my.fadeIn("slow");
+        my.stop(true, true);
+        my.css("opacity", "0");
         my.text(getCookie("username"));
+        my.animate({opacity: 1}, 500);
     })
 }
 

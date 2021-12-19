@@ -1,75 +1,200 @@
+* {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
 
-*{margin:0; padding:0; list-style-type:none;}
+body {
+    font-size: 16px;
+    background: url("../../images/my_bg.jpeg") fixed center no-repeat;
+}
 
-body{font-size:16px; background:url("../../images/my_bg.jpeg") fixed center no-repeat;}
-a{text-decoration:none; color:#666;}
-a:hover{color:#333;}
-a img{border:none;}
-.clear{clear:both;}
-.img:hover img{opacity:.7;filter:alpha(opacity=70)}
-.img img{-webkit-transition:all .9s ease;-moz-transition:all .9s ease;-o-transition:all .9s ease;transition:all .9s ease}
-#wrap{width:1200px; margin:0 auto; margin-top:50px;}
-#right{width:890px; background:#fff; padding:30px 0; float:right;font-size:18px; margin-bottom:50px; }
-#right .post{margin:0 30px 30px 30px;  color:#000; line-height:30px;padding-left:10px;}
-#right .post h3{color:#000; line-height:50px; font-size:20px;}
-#right .post p{line-height:30px;color:#666; }
-#right .post span.time{height:50px;font-size:25px; width:100px; border-left:10px solid #7182FF; line-height:50px; color: #7182FF; padding-left:10px; }
+a {
+    text-decoration: none;
+    color: #666;
+}
 
- #input{
-                border: 1px solid #ccc; 
-                padding: 7px 0px;
-                border-radius: 3px; /*css3属性IE不支持*/
-                padding-left:5px; 
-            }
+a:hover {
+    color: #333;
+}
 
-#comment input{width:120px; height:40px; background:#7182FF; color:#fff; border:0;}
-#comment textarea{width:100%; height:120px;}
+a img {
+    border: none;
+}
 
-#left{width:300px; float:left;}
+.clear {
+    clear: both;
+}
 
-<<<<<<< HEAD
-#photo{width:80px; height:80px; border-radius:50px; overflow:hidden;}
-#photo img{width:80px; height:70px;margin:0 auto 50px;}
-=======
-#photo{width:70px; height:70px; border-radius:35px; overflow:hidden; }
-#photo img{width:70px; height:70px;}
->>>>>>> b0625fea7dd2921ce92114fcd24b8f370d31fb3c
+.img:hover img {
+    opacity: .7;
+    filter: alpha(opacity=70)
+}
 
-#blogtitle{width:70px; height:130px; margin-top:20px;}
-#blogtitle h1{font-size:70px; text-align:center; line-height:90px;}
-#blogtitle h1 a{color:#7182FF;-webkit-transition:all .9s ease;-moz-transition:all .9s ease;-o-transition:all .9s ease;transition:all .9s ease}
-#blogtitle h1 a:hover{color:#fff;}
+.img img {
+    -webkit-transition: all .9s ease;
+    -moz-transition: all .9s ease;
+    -o-transition: all .9s ease;
+    transition: all .9s ease
+}
+
+#wrap {
+    width: 1200px;
+    margin: 0 auto;
+    margin-top: 50px;
+}
+
+#right {
+    width: 890px;
+    background: #fff;
+    padding: 30px 0;
+    float: right;
+    font-size: 18px;
+    margin-bottom: 50px;
+}
+
+#right .post {
+    margin: 0 30px 30px 30px;
+    color: #000;
+    line-height: 30px;
+    padding-left: 10px;
+}
+
+#right .post h3 {
+    color: #000;
+    line-height: 50px;
+    font-size: 20px;
+}
+
+#right .post p {
+    line-height: 30px;
+    color: #666;
+}
+
+#right .post span.time {
+    height: 50px;
+    font-size: 25px;
+    width: 100px;
+    border-left: 10px solid #7182FF;
+    line-height: 50px;
+    color: #7182FF;
+    padding-left: 10px;
+}
+
+#input {
+    border: 1px solid #ccc;
+    padding: 7px 0px;
+    border-radius: 3px;
+    /*css3属性IE不支持*/
+    padding-left: 5px;
+}
+
+#comment input {
+    width: 120px;
+    height: 40px;
+    background: #7182FF;
+    color: #fff;
+    border: 0;
+}
+
+#comment textarea {
+    width: 100%;
+    height: 120px;
+}
+
+#left {
+    width: 300px;
+    float: left;
+}
+
+#photo {
+    width: 80px;
+    height: 80px;
+    border-radius: 50px;
+    overflow: hidden;
+}
+
+#photo img {
+    width: 80px;
+    height: 80px;
+    margin: 0 auto 50px;
+}
+
+#blogtitle {
+    width: 70px;
+    height: 130px;
+    margin-top: 20px;
+}
+
+#blogtitle h1 {
+    font-size: 70px;
+    text-align: center;
+    line-height: 90px;
+}
+
+#blogtitle h1 a {
+    color: #7182FF;
+    -webkit-transition: all .9s ease;
+    -moz-transition: all .9s ease;
+    -o-transition: all .9s ease;
+    transition: all .9s ease
+}
+
+#blogtitle h1 a:hover {
+    color: #fff;
+}
 
 
 
-#blogtitle3 h3 a{color:#7182FF;-webkit-transition:all .9s ease;-moz-transition:all .9s ease;-o-transition:all .9s ease;transition:all .9s ease}
-#blogtitle3 h3 a:hover{color:#fff;}
+#blogtitle3 h3 a {
+    color: #7182FF;
+    -webkit-transition: all .9s ease;
+    -moz-transition: all .9s ease;
+    -o-transition: all .9s ease;
+    transition: all .9s ease
+}
 
-#nav{ width:300px; height:50px; line-height:50px; text-align:center; margin-bottom:20px;}
-#nav li{width:130px;color:#fff; margin-bottom:20px; background: #7182FF;}
-#nav li a{color:#fff; }
+#blogtitle3 h3 a:hover {
+    color: #fff;
+}
 
-#centerTable{margin: 0px auto}
-#centerTable input{
-<<<<<<< HEAD
-				margin-left: 10px;
-                border: 0.5px solid #ccc; 
-                padding: 7px 0px;
-                border-radius: 3px; /*css3属性IE不支持*/
-                padding-left:5px; 
-				margin-bottom: 20px;
-=======
-                border: 1px solid #ccc; 
-                padding: 7px 0px;
-                border-radius: 3px; /*css3属性IE不支持*/
-                padding-left:5px; 
->>>>>>> b0625fea7dd2921ce92114fcd24b8f370d31fb3c
-            }
+#nav {
+    width: 300px;
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+#nav li {
+    width: 130px;
+    color: #fff;
+    margin-bottom: 20px;
+    background: #7182FF;
+}
+
+#nav li a {
+    color: #fff;
+}
+
+#centerTable {
+    margin: 0px auto
+}
+
+#centerTable input {
+    margin-left: 10px;
+    border: 0.5px solid #ccc;
+    padding: 7px 0px;
+    border-radius: 3px;
+    /*css3属性IE不支持*/
+    padding-left: 5px;
+    margin-bottom: 20px;
+}
 
 
 /* 展示已发帖子样式 */
 
-.post_num{
+.post_num {
     min-width: 60px;
     padding: 20px 16px;
     background: url("../../images/postNum_dialog.png") center no-repeat;
@@ -77,71 +202,72 @@ a img{border:none;}
     text-align: center;
     margin: auto 0;
 }
-.post_contain{
+
+.post_contain {
     margin: 0 30px;
     width: 100%;
     font-size: 80%;
 }
-.post_contain .post_detail{
+
+.post_contain .post_detail {
     color: #9F9F9F;
 }
-.post_member{
+
+.post_member {
     width: 100px;
     text-align: end;
     margin-right: 20px;
     font-size: 80%;
     color: #ACACAC;
 }
-.block{
+
+.block {
     display: block;
 }
 
-.post_form{
+.post_form {
     margin: 20px 0;
 }
 
-.send_post{
+.send_post {
     text-align: center;
 }
-.send_post #post_title{
+
+.send_post #post_title {
     width: 90%;
     text-align: center;
     display: inline-block;
 }
-.send_post #num_counter{
+
+.send_post #num_counter {
     position: absolute;
     right: 80px;
     line-height: 30px;
     color: #999;
 }
-.send_post #title{
+
+.send_post #title {
     width: 100%;
     margin: 0 0 20px 0;
 }
-.send_post #post_contain{
+
+.send_post #post_contain {
     width: 90%;
     text-align: end;
     display: inline-block;
 }
-.send_post #contain{
+
+.send_post #contain {
     resize: none;
     width: 100%;
     height: 200px;
 }
 
-<<<<<<< HEAD
 
-=======
->>>>>>> b0625fea7dd2921ce92114fcd24b8f370d31fb3c
-.hint{
+.hint {
     display: block;
     color: crimson;
     font-size: small;
-<<<<<<< HEAD
-    margin: -25px 0 -5px 5px;
+    margin: -25px 0 25px 5px;
     text-align: right;
-=======
-    margin: -10px 0 -10px 95px;
-    text-align: left;
->>>>>>> b0625fea7dd2921ce92114fcd24b8f370d31fb3c
 }

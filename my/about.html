@@ -72,13 +72,13 @@
             <div class="clear"></div>
             <div id="nav">
                 <li><a href="../home/home.html">返回首页</a></li>
-                <li><a href="my_post.html">我的帖子</a></li>
+                <li><a href="my_post.html?page=1">我的帖子</a></li>
                 <li><a href="about.html">修改信息</a></li>
             </div>
         </div>
         <div id="right">
             <div class="post"> <span class="time">修改个人信息</span>
-               <h6 style="text-align: center;">点击修改头像</h6>
+               <h6 align="center">点击修改头像</h6>
                 <div id="photo" class="img" style="margin:5px auto 50px;">
                     <img src="" alt="image" id="profile" />
                 </div>
@@ -93,7 +93,7 @@
                                     enctype="multipart/form-data">
                                     <div class="col-sm-9 require">
                                         <input type="file" class="form-control" name="image" id="image">
-                                        <div class="upImg" style="margin-top: 5px; text-align: center;">
+                                        <div class="upImg" style="margin-top: 5px"  align="right">
                                         	<a onclick="UpLoadImg()">上传</a>
                                         </div>
                                     </div>
@@ -106,16 +106,16 @@
                 </div>
 
                 <form method="post" action="" id="form" onsubmit="return edit();">
-                    <table id="centerTable" style="border: 0;" cellspacing="15">
-                        <tr style="text-align: center;">
+                    <table id="centerTable" border="0" cellspacing="15">
+                        <tr align="center">
                             <td >用户名</td>
                             <td ><input name="userName" id='userName' type="text" value="" readOnly></td>
                         </tr>
-                        <tr style="text-align: center;">
+                        <tr align="center">
                             <td>密码</td>
                             <td><input id="password1" name="password1" type="password"></td>
                         </tr>
-                        <tr style="text-align: center;">
+                        <tr align="center">
                             <td>重复密码</td>
                             <td><input name="password" id="password" type="password">
                                 <span id="passwordHint" class="hint"></span>
@@ -123,12 +123,12 @@
                             </td>
 
                         </tr>
-                        <tr style="text-align: center;">
+                        <tr align="center">
                             <td>邮箱 </td>
                             <td><input name="email" type="text" id="email" value="" /></td>
                         </tr>
                     </table>
-                    <div id="comment" style="padding-top:15px; text-align: center;">
+                    <div align="center" id="comment" style="padding-top:15px">
                         <input name="submit" type="submit" value="确认修改">
                     </div>
                 </form>

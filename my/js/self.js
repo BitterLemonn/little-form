@@ -68,7 +68,7 @@ function showTopic(items){
 
         //根元素
         var a_container = $('<a class="list-group-item list-group-item-action d-flex gap-3 py-3" aria-current="true" style="justify-content: space-between;">');
-        a_container.attr("href", "./post.html?page=1&postID=" + item['postID']);
+        a_container.attr("href", "../post/post.html?page=1&postID=" + item['postID']);
 
         //枝元素
         var postContainer = $('<span class="post_contain"></span>');
