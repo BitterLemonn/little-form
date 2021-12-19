@@ -4,7 +4,9 @@ $result_conn = json_decode(require_once("../utils/confirmToken.php"), JSON_UNESC
 if ($result_conn["code"] == 200) {
     $json_return = ["code" => 200, "message" => "success", "data" => []];
 
-    if (isset($_COOKIE["username"])) {
+    //查询是否被禁言
+    $sql = "SELECT isBan FROM user WHERE username = '{$_COOKIE["username"]}'";
+    if (mysqli_fetch_array(mysqli_query($conn, $sql))["isBan"] != 1) {
         //回复主贴
         if (isset($_POST["postID"]) && isset($_POST["contain"])) {
             try {
@@ -35,8 +37,9 @@ if ($result_conn["code"] == 200) {
         }
     } else {
         $json_return["code"] = 401;
-        $json_return["message"] = "非法请求，请先登录";
+        $json_return["message"] = "非法请求，你已被关进小黑屋";
     }
+    
     mysqli_close($conn);
     echo (json_encode($json_return, JSON_UNESCAPED_UNICODE));
 } else {

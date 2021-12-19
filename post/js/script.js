@@ -50,12 +50,12 @@ function requestData() {
             } else {
                 showTipModal("发生错误, code: " + data.code + ", message: " + data.message);
             }
-            initItem(items, data.title);
-            initPageSwitcher(pageCount);
-
             $(".modal-close").click(function () {
                 closeTipModal();
             })
+            
+            initItem(items, data.title);
+            initPageSwitcher(pageCount);
         },
         error: function (jqXHR, textStatus, error) {
             showTipModal("发生不可预计的错误, message: " + error);
