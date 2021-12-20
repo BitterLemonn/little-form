@@ -44,7 +44,7 @@ function askOp(param, mode, isDanger, btnText) {
             break;
         }
         case "delComment": {
-            message = "是否删除该评论";
+            message = "是否删除该回复";
             break;
         }
         case "ban": {
@@ -55,6 +55,10 @@ function askOp(param, mode, isDanger, btnText) {
         }
         case "unban": {
             message = "是否解除该用户的禁言";
+            break;
+        }
+        case "delPost": {
+            message = "是否删除该文章";
             break;
         }
     }
@@ -83,7 +87,7 @@ function askOp(param, mode, isDanger, btnText) {
             case "delComment": delComment(param); break;
             case "ban": banUser(param); break;
             case "unban": unbanUser(param); break;
-            // case "post": delPost(param); break;
+            case "delPost": delPost(param); break;
         }
     })
 }

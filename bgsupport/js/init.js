@@ -1,6 +1,7 @@
 var states;
 var comments;
 var bans;
+var posts;
 
 var logoutIcon = $('<svg t="1639910353636" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="1288" width="20" height="20"><path d="M512 322c-104.92 0-190 85.08-190 190s85.08 190 190 190 190-85.06 190-190-85.08-190-190-190z" p-id="1289" fill="#d81e06"></path></svg>');
 var loginIcon = $('<svg t="1639910353636" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="1288" width="20" height="20"><path d="M512 322c-104.92 0-190 85.08-190 190s85.08 190 190 190 190-85.06 190-190-85.08-190-190-190z" p-id="1289" fill="#1afa29"></path></svg>');
@@ -12,7 +13,7 @@ var unbanIcon = $('<svg t="1639975523509" class="icon" viewBox="0 0 1024 1024" v
 
 $(document).ready(function () {
     getUserStateData();
-    getCommentData();
+    getPostData();
     getBanData();
 })
 
@@ -106,6 +107,38 @@ function getBanData() {
     })
 }
 
+function getPostData() {
+    $.ajax({
+        url: "php/getPost.php",
+        type: "GET",
+        dataType: "json",
+        success: function (data) {
+            if (data.code == 200) {
+                initPost(data.data);
+            } else {
+                showTipModal("发生错误, code: " + data.code + ", message: " + data.message);
+            }
+            $(".modal-close").click(function () {
+                closeTipModal();
+            });
+
+            //移除加载
+            $("#post-loading").remove();
+            //加载评论数据
+            getCommentData();
+        },
+        error: function (jqXHR, textStatus, error) {
+            showTipModal("初始化帖子管理时发生不可预计的错误: " + error);
+            $(".modal-close").click(function () {
+                closeTipModal();
+            });
+
+            //移除加载
+            $("#post-loading").remove();
+        }
+    })
+}
+
 function initUserstate(items) {
     states = items;
 
@@ -160,7 +193,7 @@ function initComment(items) {
             comment.text(item["comment"].substr(0, 25) + "...");
             comment.css("color", "#6777db");
             comment.attr("id", "comment-" + i);
-            comment.click(function(){
+            comment.click(function () {
                 var id = $(this).attr("id");
                 var text = items[id.split("-")[1]]["comment"];
                 $(this).text(text);
@@ -186,6 +219,7 @@ function initComment(items) {
         $("#comment-container").append(all_container);
 
     }
+    $(".delBtn").empty();
     $(".delBtn").append(delIcon);
     $(".banBtn").append(banIcon);
 }
@@ -196,17 +230,17 @@ function initBan(items) {
     for (var i in items) {
         var item = items[i];
 
-        var username = $('<span class="comment-username col-item"></span>').text(item["username"]);
-        var start = $('<span class="comment-title col-item"></span>').text(item["start"]);
-        var reason = $('<span class="comment-cotent col-item"></span>');
-        var time = $('<span class="comment-time col-item"></span>');
+        var username = $('<span class="ban-username col-item"></span>').text(item["username"]);
+        var start = $('<span class="ban-start col-item"></span>').text(item["start"]);
+        var reason = $('<span class="ban-reason col-item"></span>');
+        var time = $('<span class="ban-time col-item"></span>');
         var unban = $('<a class="unbanBtn" style="text-decoration: none; padding: 5px; cursor: pointer;"></a>');
 
         item["reason"] != null ? reason.text(item["reason"]) : reason.text("暂无");
-        var endtime = new Date(parseInt(item["duration"]) * 1000 + new Date().getTime()).toLocaleString().replace(/:\d{1,2}$/,' '); 
+        var endtime = new Date(parseInt(item["duration"]) * 1000 + new Date().getTime()).toLocaleString().replace(/:\d{1,2}$/, ' ');
         time.text(endtime);
 
-        unban.attr("onclick", "askOp('" + item["username"] +"', 'unban', false, '解除禁言');");
+        unban.attr("onclick", "askOp('" + item["username"] + "', 'unban', false, '解除禁言');");
 
         var username_container = $('<div class="col-2"></div>').append(username);
         var start_contianer = $('<div class="col-2"></div>').append(start);
@@ -225,3 +259,49 @@ function initBan(items) {
     $(".unbanBtn").append(unbanIcon);
 }
 
+function initPost(items) {
+    posts = items;
+
+    for (var i in items) {
+        var item = items[i];
+
+        var title = $('<span class="post-title col-item"></span>').text(item["title"]);
+        var content = $('<span class="post-content col-item"></span>');
+        var own = $('<span class="post-own col-item"></span>').text(item["ownUser"]);
+        var recent = $('<span class="post-recent col-item"></span>').text(item["recentUser"]);
+        var time = $('<span class="post-time col-item"></span>').text(item["timestamp"]);
+        var del = $('<a class="delBtn" style="text-decoration: none; padding: 5px; cursor: pointer;"></a>');
+
+        if (item["content"].length > 25) {
+            content.text(item["content"].substr(0, 25) + "...");
+            content.css("color", "#6777db");
+            content.attr("id", "content-" + i);
+            content.click(function () {
+                var id = $(this).attr("id");
+                var text = items[id.split("-")[1]]["content"];
+                $(this).text(text);
+                $(this).css("color", "");
+            })
+        } else {
+            content.text(item["content"]);
+        }
+        del.attr("onclick", "askOp('" + item["id"] + "', 'delPost', false, '删除');");
+
+        var title_contianer = $('<div class="col-2"></div>').append(title);
+        var content_contianer = $('<div class="col-3"></div>').append(content);
+        var own_container = $('<div class="col-2"></div>').append(own);
+        var recent_container = $('<div class="col-2"></div>').append(recent);
+        var time_container = $('<div class="col-2"></div>').append(time);
+        var del_container = $('<div class="col-1"></div>').append(del);
+
+        var all_container = $('<div class="list-group-item list-group-item-action"></div>')
+            .append($('<div class="row"></div>')
+                .append(title_contianer, content_contianer,
+                    own_container, recent_container, time_container, del_container));
+
+        $("#post-container").append(all_container);
+
+    }
+    $(".delBtn").empty();
+    $(".delBtn").append(delIcon);
+}
