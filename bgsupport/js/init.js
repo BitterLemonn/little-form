@@ -136,6 +136,8 @@ function initComment(items) {
         } else {
             comment.text(item["comment"]);
         }
+        ban.attr("id", "username-" + item["username"]);
+        ban.attr("onclick", "showBanModal(this);");
 
         var username_container = $('<div class="col-2"></div>').append(username);
         var title_contianer = $('<div class="col-2"></div>').append(title);

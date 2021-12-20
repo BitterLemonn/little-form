@@ -215,6 +215,43 @@
                 </div>
             </div>
 
+            <!--时间选择模态框-->
+            <div class="modal fade" id="banModal" style="display: none;" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h6 class="modal-title">请选择禁言时长</h6>
+                            <button type="button" class="btn-close modal-close" data-bs-dismiss="modal"></button>
+                        </div>
+                        <div class="modal-body" style="text-align: center;">
+                            <input type="hidden" class="banUsername">
+                            <select class="modal-input" style="width: 80%;">
+                                <option value="300">5分钟</option>
+                                <option value="900">15分钟</option>
+                                <option value="1800">30分钟</option>
+                                <option value="3600">1小时</option>
+                                <option value="10800">3小时</option>
+                                <option value="21600">6小时</option>
+                                <option value="43200">12小时</option>
+                                <option value="86400">1天</option>
+                                <option value="259200">3天</option>
+                                <option value="604800">7天</option>
+                                <option value="1296000">15天</option>
+                                <option value="2592000">1个月</option>
+                                <option value="7776000">3个月</option>
+                                <option value="99999999999999">永久</option>
+                            </select>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-light modal-close" data-bs-dismiss="modal">关闭</button>
+                            <button type="button" class="btn btn-primary modal-close" data-bs-dismiss="modal"
+                                onclick="askBan();">
+                                确定</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
         </div>
         <div class="footer">
             <div class="footer-container" style="margin-left: 10px; color: #8A8A8A;">

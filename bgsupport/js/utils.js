@@ -47,6 +47,12 @@ function askOp(param, mode, isDanger, btnText) {
             message = "是否删除该评论";
             break;
         }
+        case "ban": {
+            var time = getDateDiff(param["time"] * 1000);
+            message = "你正在进行危险操作，是否要对用户 "
+                + param["username"] + " 禁言至 " + time;
+            break;
+        }
     }
     if (message != null) {
         showTipModal(message);
@@ -71,9 +77,65 @@ function askOp(param, mode, isDanger, btnText) {
         switch (mode) {
             case "state": forceLogoutUser(param); break;
             case "delComment": delComment(param); break;
-            // case "tag": delTag(param); break;
+            case "ban": banUser(param); break;
             // case "cata": delCata(param); break;
             // case "post": delPost(param); break;
         }
     })
+}
+
+//开关模态框
+function showBanModal(dom) {
+    var modal = $("#banModal");
+    $(".banUsername").val($(dom).attr("id").split("-")[1]);
+
+    modal.addClass("show");
+    modal.attr("aria-modal", "true");
+    modal.attr("role", "dialog");
+    modal.removeAttr("aria-hidden");
+    modal.css("display", "block");
+    modal.parent().append($('<div class="modal-backdrop show modal-bg"></div>'));
+}
+
+//询问禁言
+function askBan() {
+    setTimeout(function(){
+        var username = $(".banUsername").val();
+        var time = $(".modal-input").val();
+        var item = {
+            "username": username,
+            "time": time
+        };
+        askOp(item, "ban", true, "禁言");
+    },100);
+}
+
+//转化时间戳
+function getDateDiff(dateTimeStamp) {
+    var minute = 1000 * 60;
+    var hour = minute * 60;
+    var day = hour * 24;
+    var month = day * 30;
+    var diffValue = dateTimeStamp;
+    if (diffValue < 0) {
+        return;
+    }
+    var monthC = diffValue / month;
+    var weekC = diffValue / (7 * day);
+    var dayC = diffValue / day;
+    var hourC = diffValue / hour;
+    var minC = diffValue / minute;
+    if (monthC >= 1) {
+        result = "" + parseInt(monthC) + "个月后";
+    } else if (weekC >= 1) {
+        result = "" + parseInt(weekC) + "周后";
+    } else if (dayC >= 1) {
+        result = "" + parseInt(dayC) + "天后";
+    } else if (hourC >= 1) {
+        result = "" + parseInt(hourC) + "小时后";
+    } else if (minC >= 1) {
+        result = "" + parseInt(minC) + "分钟后";
+    } else
+        result = "一会后";
+    return result;
 }

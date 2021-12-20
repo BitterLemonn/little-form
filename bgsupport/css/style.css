@@ -71,11 +71,11 @@ body,
             font-size: 80%;
         }
 
-        .post-edit-input{
+        .modal-input{
             border: #999 1px solid;
             border-radius: 10px;
             padding: 5px 10px;
         }
-        .post-edit-input:focus{
+        .modal-input:focus{
             outline: #6777db 1px solid;
         }

@@ -57,3 +57,31 @@ function delComment(id){
         }
     })
 }
+
+function banUser(param){
+    $.ajax({
+        url: "php/banUser.php",
+        type: "POST",
+        data: param,
+        dataType: "JSON",
+        success: function(data){
+            if(data.code == 200){
+                showTipModal("关小黑屋成功");
+                setTimeout(function(){
+                    window.location.reload();
+                }, 1000);
+            } else {
+                showTipModal("发生错误, code: " + data.code + ", message: " + data.message);
+            }
+            $(".modal-close").click(function () {
+                closeTipModal();
+            });
+        },
+        error: function(jqXHR, textStatus, error){
+            showTipModal("关小黑屋时发生不可预料的错误: " + error);
+            $(".modal-close").click(function () {
+                closeTipModal();
+            });
+        }
+    })
+}
