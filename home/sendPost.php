@@ -33,7 +33,7 @@ if ($result_conn["code"] == 200) {
         $sql = "INSERT INTO form(userName, comment, ownPost) VALUES ('{$_COOKIE['username']}', '{$_POST['contain']}', '{$result['postID']}')";
         mysqli_query($conn, $sql);
     } else {
-        $json_return["code"] = 401;
+        $json_return["code"] = 403;
         $json_return["message"] = "非法请求，你已被关进小黑屋";
     }
 

@@ -36,7 +36,7 @@ if ($result_conn["code"] == 200) {
             $json_return["message"] = "非法请求，部分参数为空";
         }
     } else {
-        $json_return["code"] = 401;
+        $json_return["code"] = 403;
         $json_return["message"] = "非法请求，你已被关进小黑屋";
     }
     
