@@ -78,7 +78,11 @@ function check(){
             
             success: function(data, textStatus, jqXHR){
                 if(data["code"] == 200){
-                    window.location.href = "../home/home.html?page=1";
+                    if(getCookie("username") == "admin"){
+                        window.location.href = "../bgsupport/frame.html";
+                    }else{
+                        window.location.href = "../home/home.html?page=1";
+                    }
                 }else if(data["code"] == 202){
                     $("#errHint").text("用户名或者密码错误");
                 }

@@ -1,5 +1,33 @@
 var position = "post";
 
+//检测管理员
+$.ajax({
+    url: "php/checkPri.php",
+    type: "GET",
+    dataType: "JSON",
+    success: function (data) {
+        if (data.code != 200) {
+            showTipModal(data.message);
+            setTimeout(function () {
+                window.location.href = "../login/login.html";
+            }, 1000);
+        }else{
+            $(document).ready(function(){
+                init();
+            })
+        }
+        $(".modal-close").click(function () {
+            closeTipModal();
+        });
+    },
+    error: function (jqXHR, textStatus, error) {
+        showTipModal("关小黑屋时发生不可预料的错误: " + error);
+        $(".modal-close").click(function () {
+            closeTipModal();
+        });
+    }
+})
+
 $(document).ready(function () {
     //检测链接跳转卡片
     var position = getFormattedString();

@@ -5,7 +5,7 @@ $result_conn = json_decode(require_once("../../utils/confirmToken.php"), JSON_UN
 if ($result_conn["code"] == 200) {
     $json_return = ["code" => 200, "message" => "success", "data" => []];
 
-    $sql = "SELECT username FROM user WHERE username != '{$_COOKIE["username"]}'";
+    $sql = "SELECT username FROM user WHERE username != '{$_COOKIE["username"]}' AND isOP != 1";
     if ($result = mysqli_query($conn, $sql)) {
         while ($line = mysqli_fetch_array($result)["username"]) {
             $sql = "SELECT * FROM token WHERE username = '$line'";
