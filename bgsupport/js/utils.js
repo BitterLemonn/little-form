@@ -53,6 +53,10 @@ function askOp(param, mode, isDanger, btnText) {
                 + param["username"] + " 禁言至 " + time;
             break;
         }
+        case "unban": {
+            message = "是否解除该用户的禁言";
+            break;
+        }
     }
     if (message != null) {
         showTipModal(message);
@@ -78,7 +82,7 @@ function askOp(param, mode, isDanger, btnText) {
             case "state": forceLogoutUser(param); break;
             case "delComment": delComment(param); break;
             case "ban": banUser(param); break;
-            // case "cata": delCata(param); break;
+            case "unban": unbanUser(param); break;
             // case "post": delPost(param); break;
         }
     })
@@ -101,10 +105,12 @@ function showBanModal(dom) {
 function askBan() {
     setTimeout(function(){
         var username = $(".banUsername").val();
-        var time = $(".modal-input").val();
+        var time = $(".timeSelect").val();
+        var reason = $(".resonInput").val();
         var item = {
             "username": username,
-            "time": time
+            "time": time,
+            "reason": reason
         };
         askOp(item, "ban", true, "禁言");
     },100);

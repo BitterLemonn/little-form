@@ -61,8 +61,8 @@ function showCard(cardName) {
     switch (cardName) {
         case 'state-content-card': title = "状态管理"; break;
         case 'comment-content-card': title = "评论管理"; break;
-        // case 'tag-content-card': title = "标签管理"; break;
-        // case 'page-content-card': title = "页面管理"; break;
+        case 'ban-content-card': title = "禁言管理"; break;
+        case 'post-content-card': title = "帖子管理"; break;
         // case 'comment-content-card': title = "评论管理"; break;
     }
 

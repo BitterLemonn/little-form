@@ -5,18 +5,14 @@ $result_conn = json_decode(require_once("../../utils/confirmToken.php"), JSON_UN
 if ($result_conn["code"] == 200) {
     $json_return = ["code" => 200, "message" => "success", "data" => []];
 
-    $sql = "SELECT * FROM form";
+    $sql = "SELECT * FROM bannedUser";
     if ($result = mysqli_query($conn, $sql)) {
         while ($line = mysqli_fetch_array($result)) {
-            $sql = "SELECT title FROM post WHERE postID={$line['ownPost']}";
-            if ($post = mysqli_fetch_array(mysqli_query($conn, $sql))['title']) {
-                $item = [
-                    "id" => $line["commentID"], "username" => $line["userName"],
-                    "comment" => $line["comment"], "timestamp" => $line["timestamp"],
-                     "ownPost" => $post
-                ];
-                array_push($json_return["data"], $item);
-            }
+            $item = [
+                "username" => $line["username"], "start" => $line["startTime"],
+                "duration" => $line["duration"], "reason" => $line["reason"]
+            ];
+            array_push($json_return["data"], $item);
         }
     } else {
         $json_return["code"] = 500;

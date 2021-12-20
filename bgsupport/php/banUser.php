@@ -24,6 +24,14 @@ if ($result_conn["code"] == 200) {
                 $json_return["message"] = "关小黑屋失败, " . $conn->error;
             }
         }
+        //设置禁言理由
+        if($_POST["reason"] != null){
+            $sql = "UPDATE bannedUser SET reason = '{$_POST['reason']}' WHERE username = '{$_POST['username']}'";
+            if(!mysqli_query($conn, $sql)){
+                $json_return["code"] = 500;
+                $json_return["message"] = "关小黑屋失败, " . $conn->error;
+            }
+        }
     }
     echo (json_encode($json_return, JSON_UNESCAPED_UNICODE));
     mysqli_close($conn);
