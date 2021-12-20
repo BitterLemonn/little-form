@@ -89,7 +89,7 @@ function initItem(items, title) {
         var item = items[i];
         //主贴
         if (item["type"] == 0) {
-			var u_img = item['profile'] ? "../" + item['profile'] : "../images/img2.jpg"
+			var u_img = item['profile'] ? item['profile'] : "../images/img2.jpg"
             //叶节点
             var img = $('<img class="rounded-circle userImg" src="'+u_img+'" alt="userIcon" style="width: 70px; height: 70px;">');
             var username = $('<span class="username" style="display: block;"></span>');
@@ -147,7 +147,7 @@ function initItem(items, title) {
                     for (var k in items) {
                         if (items[k]["commentID"] == num_floor) {
                             //叶节点
-                            var u_img = items[k]['profile'] ? "../" + items[k]['profile'] : "../images/img2.jpg";
+                            var u_img = items[k]['profile'] ? items[k]['profile'] : "../images/img2.jpg";
                             var img = $('<img src="'+u_img+'" alt="userIcon" class="reply_userIcon img-thumbnail">');
                             var username = $('<span></span>');
                             username.text(items[k]["username"] + ": ");
@@ -448,6 +448,7 @@ function addFloorReplyForm(commentID) {
 //显示回复窗口
 function toggleFloorReply(commentID, user) {
     var container = $("#floorFormContainer" + commentID);
+    container.stop(true, true);
     container.slideToggle("slow");
     if (user != null) {
         $("#area" + commentID).attr("placeholder", "回复 " + user + ": ");
@@ -460,6 +461,7 @@ function toggleFloorReply(commentID, user) {
 
 function showFloorReply(commentID, user) {
     var container = $("#floorFormContainer" + commentID);
+    container.stop(true, true);
     container.slideDown("slow");
     if (user != null) {
         $("#area" + commentID).attr("placeholder", "回复 " + user + ": ");

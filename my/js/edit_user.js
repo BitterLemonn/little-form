@@ -20,7 +20,11 @@ function getUser() {
             if (data["code"] == 200) {
                 document.getElementById("userName").value = data["data"]["username"];
                 document.getElementById("email").value = data["data"]["email"];
-                document.getElementById("profile").src = "../" + data["data"]["profile"] || '../../images/me.jpg'
+                if (data["data"]["profile"] != "") {
+                    document.getElementById("profile").src = data["data"]["profile"]
+                } else {
+                    document.getElementById("profile").src = '../images/img2.jpg';
+                }
             }
             else {
                 $("#errHint").text("发生不可预计的错误, 请联系网站管理员。错误详情: code: " + data["code"] + ", message: " + data["message"]);

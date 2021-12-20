@@ -10,7 +10,7 @@ if ($result_conn["code"] == 200) {
         do{
             $new_name = get_file_name(6).'.'.$ext;
 
-            $path='upload/'.$new_name;//upload为目标文件夹
+            $path='../upload/'.$new_name;//upload为目标文件夹
         }while (file_exists("../" . $path));//检查图片是否存在文件夹，存在返回ture,否则false
         $temp_file=$_FILES['image']['tmp_name'];//获取服务器里图片
         $sql  = "UPDATE user SET profile='$path' where username='{$_COOKIE['username']}'";
