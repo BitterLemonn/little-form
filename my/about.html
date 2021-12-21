@@ -78,29 +78,9 @@
             <div class="post"> <span class="time">修改个人信息</span>
                <h6 align="center">点击修改头像</h6>
                 <div id="photo" class="img" style="margin:5px auto 50px;">
-                    <img src="" alt="icon" id="profile" />
-                </div>
-                
-                            
-                <div class="modal fade" id="createFileMModal" role="dialog" aria-labelledby="exampleModalLabel"
-                    aria-hidden="true">
-                    <div class="modal-dialog" role="document">
-                        <div class="modal-content">
-                            <div class="modal-body">
-                                <form id="form1" method="post" class="form-horizontal" role="form"
-                                    enctype="multipart/form-data">
-                                    <div class="col-sm-9 require">
-                                        <input type="file" class="form-control" name="image" id="image">
-                                        <div class="upImg" style="margin-top: 5px"  align="right">
-                                        	<a onclick="UpLoadImg()">上传</a>
-                                        </div>
-                                    </div>
-                                </form>
-
-                            </div>
-                        </div>
-
-                    </div>
+                    <img src="" alt="icon" id="profile">
+                    <input type="file" class="form-control" name="image" id="image"
+                     style="margin-top: -130px;opacity: 0;height: 100%;font-size: 90px;width: 100%;" onchange="UpLoadImg()">
                 </div>
 
                 <form method="post" action="" id="form" onsubmit="return edit();">

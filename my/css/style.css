@@ -26,10 +26,10 @@ a img {
     clear: both;
 }
 
-.img:hover img {
+/* .img:hover img {
     opacity: .7;
     filter: alpha(opacity=70)
-}
+} */
 
 .img img {
     -webkit-transition: all .9s ease;
