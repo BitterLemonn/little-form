@@ -19,6 +19,9 @@
             window.location.href = "../login/login.html";
         }
         var items = requestData();
+        $(document).ready(function(){
+            initBG()
+        })
     </script>
     <title>论坛</title>
 </head>
@@ -50,7 +53,7 @@
                             style="margin: 10px; opacity: 1;"></a>
                         <ul class="dropdown-menu">
                             <li><a class="dropdown-item" href="#form" id="send">发帖</a></li>
-                            <li><a class="dropdown-item" href="../my/my_post.html?page=1" id="about">我的</a></li>
+                            <li class="pointer_my"><a class="dropdown-item" href="../my/my_post.html?page=1" id="about">我的</a></li>
                             <li>
                                 <hr class="dropdown-divider">
                                 </hr>

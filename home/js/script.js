@@ -18,6 +18,13 @@ function initTip() {
     })
 }
 
+function initBG(){
+    if(getCookie("username") == "admin"){
+        var bg = $('<li><a class="dropdown-item" href="../bgsupport/" id="bgsupport">后台管理</a></li>');
+        bg.insertAfter(".pointer_my");
+    }
+}
+
 function getQueryString(name) {
     var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)");
     var r = window.location.search.substr(1).match(reg);
